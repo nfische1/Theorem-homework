@@ -9,17 +9,17 @@ class BasePageLocators(object):
 
 class AccountCreationPageLocators(object):
     """A class for Account Creation page locators."""
-    EMAIL_ADDRESS_FIELD = (By.ID, "[id='email_create']")
-    CREATE_ACCOUNT_BTN = (By.ID, "[id='create_account_form']")
-    ERROR = (By.ID, "[id='create_account_error']")
-    MR_RADIO = (By.ID, "[id='uniform-id_gender1']")
-    MRS_RADIO = (By.ID, "[id='uniform-id_gender2']")
+    EMAIL_ADDRESS_FIELD = (By.ID, 'email_create')
+    CREATE_ACCOUNT_BTN = (By.ID, 'SubmitCreate')
+    ERROR = (By.ID, 'create_account_error')
+    MR_RADIO = (By.ID, 'uniform-id_gender1')
+    MRS_RADIO = (By.ID, 'uniform-id_gender2')
     PAGE_HEADING = (By.ID, "page-heading")
     PAGE_SUBHEADING = (By.ID, "page-subheading")
-    FIRST_NAME_FIELD = (By.ID, "[id='customer_firstname']")
-    LAST_NAME_FIELD = (By.ID, "[id='customer_lastname']")
-    FORM_EMAIL_ADDRESS = (By.ID, "[id='email']")
-    PASSWORD_FIELD = (By.ID, "[id='passwd']")
+    FIRST_NAME_FIELD = (By.ID, 'customer_firstname')
+    LAST_NAME_FIELD = (By.ID, 'customer_lastname')
+    FORM_EMAIL_ADDRESS = (By.ID, 'email')
+    PASSWORD_FIELD = (By.ID, 'passwd')
     BIRTH_DAY_DROPDOWN = (By.ID, "[id='days']")
     BIRTH_MONTH_DROPDOWN = (By.ID, "[id='months']")
     BIRTH_YEAR_DROPDOWN = (By.ID, "[id='years']")
@@ -41,6 +41,7 @@ class AccountCreationPageLocators(object):
 
 
 class LoginPageLocators(object):
-    """A class for Login page locators."""
-    LOGIN_BUTTON = (By.CLASS_NAME, "login")
+    """A class for Login Logout page locators."""
+    HEADER_INFO = (By.CSS_SELECTOR, "[class='header_user_info]")
+    LOGIN_BUTTON = (By.CSS_SELECTOR, "[class='login']")
     SIGN_OUT_BUTTON = (By.CLASS_NAME, "logout")
