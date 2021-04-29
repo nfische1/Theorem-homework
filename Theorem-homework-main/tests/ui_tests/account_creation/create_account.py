@@ -3,10 +3,7 @@ from selenium.webdriver.chrome.options import Options
 from tests import web_app_setup
 
 
-def test_BE7674(environment, record_xml_attribute):
-    record_xml_attribute(
-        "name",
-        "FI-FE-When a user is created, if an admin or treasurer role is selected, their location is auto assigned")
+def test_create_account():
     # Setup Driver, define options
     options = Options()
     # Comment out the line below if you want to see the test run
