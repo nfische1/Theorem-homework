@@ -1,11 +1,7 @@
-import random
-import string
 
 from page_locators import AccountCreationPageLocators, LoginPageLocators
 import screenshots
-import time
 from selenium.common.exceptions import NoSuchElementException
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
@@ -46,18 +42,8 @@ class BasePage(object):
         element.clear()
         element.send_keys(text_to_enter)
 
-    def random_string(self, stringLength=10):
-        letters = string.ascii_letters
-        return ''.join(random.choice(letters) for i in range(stringLength)).lower()
 
-    def random_number(self, range=10):
-        amount = random.randrange(range)
-        if amount < 1:
-            amount = amount + 1
-        return amount
-
-
-class AccountCreation(BasePage):
+class AccountCreationPage(BasePage):
 
     def wait_for_load_complete(self):
         self.wait_for_element_visibility(*LoginPageLocators.LOGIN_BUTTON)
