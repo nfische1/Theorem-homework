@@ -1,9 +1,11 @@
 from selenium.webdriver.common.by import By
 
+
 class BasePageLocators(object):
     """Base Page Locators - Elements on EVERY page"""
     CONTACT_US = (By.ID, "contact-link")
     CART = (By.CSS_SELECTOR, "[class='shopping_cart']")
+
 
 class AccountCreationPageLocators(object):
     """A class for Account Creation page locators."""
@@ -35,10 +37,10 @@ class AccountCreationPageLocators(object):
     MOBILE_PHONE = (By.ID, "[id='phone_mobile']")
     ADDRESS_ALIAS = (By.ID, "[id='alias']")
     REGISTER_BUTTON = (By.ID, "[id='submitAccount']")
+    OPTION = (By.TAG_NAME, "OPTION")
 
 
 class LoginPageLocators(object):
     """A class for Login page locators."""
     LOGIN_BUTTON = (By.CLASS_NAME, "login")
     SIGN_OUT_BUTTON = (By.CLASS_NAME, "logout")
-
