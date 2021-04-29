@@ -1,0 +1,12 @@
+google
+datetime~=4.3
+pyjwt~=1.7.1
+pytest
+pytest-rerunfailures
+pylint
+ulid-py
+uuid~=1.30
+pytest-xdist
+pytest-timeout
+selenium
+pybase64
