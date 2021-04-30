@@ -141,7 +141,7 @@ REPORTS
 MAIN OBJECTIVE 
 ```
 I would have tweaked the main objective of this project to prioritize a single end to end test.
-This would effectively demonstrate the functionality of the website. Most improtantly, it would verify that a product could be checked out. 
+This would effectively demonstrate the functionality of the website. Most importantly, it would verify that a product could be checked out. 
 ```
 
 TAKEAWAYS
