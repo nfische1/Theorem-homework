@@ -1,7 +1,10 @@
 import time
 
 from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver import ActionChains
+from selenium.webdriver.common import actions
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium import webdriver
 
@@ -10,7 +13,7 @@ from tests.page_locators import LoginPageLocators, AccountCreationPageLocators
 
 
 class BasePage(object):
-    default_wait = 300
+    default_wait = 30
 
     def __init__(self, driver):
         self.driver = driver
@@ -108,44 +111,38 @@ class AccountCreationPage(BasePage):
                 break
 
     def enter_address(self, address):
-        self.wait_for_element_visibility(AccountCreationPageLocators.ADDRESS_FIELD)
+        self.driver.find_element(*AccountCreationPageLocators.ADDRESS_FIELD)
         self.click_element(AccountCreationPageLocators.ADDRESS_FIELD)
         self.enter_text(AccountCreationPageLocators.ADDRESS_FIELD, address)
 
     def enter_city(self, city):
-        self.wait_for_element_visibility(AccountCreationPageLocators.CITY_FIELD)
+        self.driver.find_element(*AccountCreationPageLocators.CITY_FIELD)
         self.click_element(AccountCreationPageLocators.CITY_FIELD)
         self.enter_text(AccountCreationPageLocators.CITY_FIELD, city)
 
     def enter_state(self, state):
-        self.wait_for_element_visibility(AccountCreationPageLocators.STATE_DROPDOWN)
-        self.click_element(AccountCreationPageLocators.STATE_DROPDOWN)
-        self.enter_text(AccountCreationPageLocators.STATE_DROPDOWN, state)
-        self.click_element(AccountCreationPageLocators.OPTION)
+        statedd = Select(self.driver.find_element(*AccountCreationPageLocators.STATE_DROPDOWN))
+        statedd.select_by_index(0)
+
 
     def enter_zipcode(self, zip):
-        self.wait_for_element_visibility(AccountCreationPageLocators.ZIPCODE_FIELD)
         self.click_element(AccountCreationPageLocators.ZIPCODE_FIELD)
         self.enter_text(AccountCreationPageLocators.ZIPCODE_FIELD, zip)
 
     def enter_country(self, country):
-        self.wait_for_element_visibility(AccountCreationPageLocators.COUNTRY_DROPDOWN)
         self.click_element(AccountCreationPageLocators.COUNTRY_DROPDOWN)
         self.enter_text(AccountCreationPageLocators.COUNTRY_DROPDOWN, country)
         self.click_element(AccountCreationPageLocators.OPTION)
 
     def enter_mobile_phone(self, mobile):
-        self.wait_for_element_visibility(AccountCreationPageLocators.MOBILE_PHONE)
         self.click_element(AccountCreationPageLocators.MOBILE_PHONE)
         self.enter_text(AccountCreationPageLocators.MOBILE_PHONE, mobile)
 
     def enter_address_alias(self, alias):
-        self.wait_for_element_visibility(AccountCreationPageLocators.ADDRESS_ALIAS)
         self.click_element(AccountCreationPageLocators.ADDRESS_ALIAS)
         self.enter_text(AccountCreationPageLocators.ADDRESS_ALIAS, alias)
 
     def click_register(self):
-        self.wait_for_element_visibility(AccountCreationPageLocators.REGISTER_BUTTON)
         self.click_element(AccountCreationPageLocators.REGISTER_BUTTON)
 
 
@@ -154,4 +151,3 @@ class Login(BasePage):
     def login_page(self, email, password):
         self.wait_for_element_visibility(LoginPageLocators.LOGIN_BUTTON)
         self.click_element(LoginPageLocators.LOGIN_BUTTON)
-
