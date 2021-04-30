@@ -134,7 +134,7 @@ IntelliJ Setup
 
 Save and restart if necessary.
 
-REPORTS
+
 ```
 ---------------------------------------LESSONS LEARNED ---------------------------------------------------------------------
 ```
