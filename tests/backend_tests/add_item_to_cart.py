@@ -1,9 +1,8 @@
-import json
-
 import requests
 
 request_product_url = 'http://automationpractice.com/index.php?rand=1619785489380'
 header_def = {'Content-Type': 'text/html', 'Accept': 'application/json'}
+
 
 def post(url, headers):
     # print('\nWeb Request Sending: {}'.format(json.dumps(json_data)))

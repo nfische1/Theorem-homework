@@ -1,8 +1,8 @@
 import requests
 
-
 login_url = 'http://automationpractice.com/index.php?controller=authentication&back=my-account'
 header_def = {'Content-Type': 'text/html', 'Accept': 'application/json'}
+
 
 def post(url, headers, json):
     # print('\nWeb Request Sending: {}'.format(json.dumps(json_data)))

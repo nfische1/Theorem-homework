@@ -1,13 +1,9 @@
 import time
 
 from selenium.common.exceptions import NoSuchElementException
-from selenium.webdriver import ActionChains
-from selenium.webdriver.common import actions
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium import webdriver
-
 from tests import screenshots
 from tests.page_locators import LoginPageLocators, AccountCreationPageLocators
 
@@ -123,7 +119,6 @@ class AccountCreationPage(BasePage):
     def enter_state(self, state):
         statedd = Select(self.driver.find_element(*AccountCreationPageLocators.STATE_DROPDOWN))
         statedd.select_by_index(0)
-
 
     def enter_zipcode(self, zip):
         self.click_element(AccountCreationPageLocators.ZIPCODE_FIELD)
